@@ -59,3 +59,11 @@ class Registrar_galleta:
             print("Galleta basica Registrada ")
         except ValueError:
             print("Error al ingresar datos")
+    def listar_galletas(self):
+        nombre = input("Nombre a buscar: ").strip()
+        encontrados = [g for g in self.registro_galletas if g.nombre.lower() == nombre.lower()]
+        if encontrados:
+            for g in encontrados:
+                print(g.mostrar_informacion())
+        else:
+            print(" No encontrada.")

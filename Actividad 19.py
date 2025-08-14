@@ -46,7 +46,7 @@ class Registrar_galleta:
             peso = float(input("Ingrese el peso de la Galleta: "))
             cantidad_chispas = int(input("Ingrese la cantidad de chispas: "))
             self.registro_galletas.append(Galleta(nombre, precio, peso, cantidad_chispas))
-            print("Galleta basica Registrada ")
+            print("Galletacon chispas  Registrada ")
         except ValueError:
             print("Error al ingresar datos")
     def add_galleta_rellena(self):
@@ -56,7 +56,7 @@ class Registrar_galleta:
             peso = float(input("Ingrese el peso de la Galleta: "))
             sabor = input("Ingrese el baro de la galleta: ")
             self.registro_galletas.append(GalletaconRelleno(nombre, precio, peso, sabor))
-            print("Galleta basica Registrada ")
+            print("Galleta con relleno Registrada ")
         except ValueError:
             print("Error al ingresar datos")
     def listar_galletas(self):
@@ -67,3 +67,21 @@ class Registrar_galleta:
                 print(g.mostrar_informacion())
         else:
             print(" No encontrada.")
+
+    def buscar_galleta(self):
+        nombre = input("Nombre de la galleta a buscar: ").strip()
+        encontrados = [g for g in self.registro_galletas if g.nombre.lower() == nombre.lower()]
+        if encontrados:
+            for g in encontrados:
+                print(g.mostrar_informacion())
+        else:
+            print(" No encontrada.")
+
+    def eliminar_galleta(self):
+        nombre = input("Nombre de la galleta a eliminar: ").strip()
+        antes = len(self.registro_galletas)
+        self.registro_galletas = [g for g in self.registro_galletas if g.nombre.lower() != nombre.lower()]
+        if len(self.registro_galletas) < antes:
+            print(" Eliminada.")
+        else:
+            print(" No se encontró.")

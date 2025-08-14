@@ -6,10 +6,7 @@ class Galleta:
     def mostrar_informacion(self):
          return f"Nombre de la Galleta: {self.nombre}, Costo de la galleta: {self.precio}, Peso de la galleta: {self.peso}"
 
-class Galletachispas(Galleta):
-    def __init__(self, nombre,precio,peso,cantidad_chispas):
-        super.__init__(nombre,precio,peso)
-        self.cantidad_chispas = cantidad_chispas
+
 class Registrar_galleta:
     def __init__(self):
         self.registro_galletas =[]

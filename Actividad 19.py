@@ -13,7 +13,7 @@ class Registrar_galleta:
     def add_galleta_basica(self):
        try:
            nombre = input("Ingrese el nombre de la galleta: ").strip()
-           precio = float(input("Ingrese el precio de la galleta: "))
+           precio = float(input("Ingrese el precio de la galleta:  "))
            peso = float(input("Ingrese el peso de la Galleta: "))
            self.registro_galletas.append(Galleta(nombre, precio, peso))
        except ValueError:
